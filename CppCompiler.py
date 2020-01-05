@@ -11,7 +11,7 @@ class CppCompiler:
         args = [ self.compilerPath , "-static", "-fno-optimize-sibling-calls", "-fno-strict-aliasing", "-DLOCAL", "-lm", "-s", "-xc++", "-Wl,--stack=268435456", "-O2", "-std=c++11", "-D__USE_MINGW_ANSI_STDIO=0", "-o" + self.path_to_executable, path_to_source]
 
         print("Compiling...")
-        process = subprocess.Popen(args, stderr=subprocess.PIPE)
+        process = subprocess.Popen(args)
         exit_code = process.wait()
         if exit_code == 0:
             print("Success")
