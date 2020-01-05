@@ -22,8 +22,10 @@ class TestCase:
             print(self.expected_output)
             print("actual:")
             print(self.actual_output)
-            print("Stderr:")
-            print(stderr_output)
+
+            if len(stderr_output) > 0 and not stderr_output.isspace():
+                print("Stderr:")
+                print(stderr_output)
 
 
 def read_tests(path_to_tests):
