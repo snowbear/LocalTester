@@ -1,4 +1,4 @@
-import os, sys, time
+import os, sys, time, tempfile
 from runners import choose_runner
 from subprocessThread import SubprocessThread
 from test import read_tests
@@ -7,7 +7,7 @@ from test import read_tests
 assert len(sys.argv) == 2, "Example run: run_tests.py PATH_TO_SOURCE"
 
 
-path_to_solution = "C:/Users\Marat\AppData\Local\Temp\program1.exe"
+path_to_solution = os.path.join(tempfile.gettempdir(), "program1.exe")
 path_to_source = sys.argv[1]
 path_to_tests = os.path.splitext(path_to_source)[0] + '.txt'
 
